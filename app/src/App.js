@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
+import Login from "./components/Login";
 
 // State Management
 import { connect } from "react-redux";
 
 function App({ name }) {
-  return <div className="App" data-testid="username">{`Hey, ${name}!`}</div>;
+  return <Login />;
 }
 
 const mapStateToProps = (state) => {
