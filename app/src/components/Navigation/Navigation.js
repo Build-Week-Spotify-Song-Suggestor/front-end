@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import NavToggle from "./NavToggle";
-import "./Navigation.css";
+import { Navbar, NavLink, NavbarBrand } from "reactstrap";
 
 // React Router
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -10,14 +9,18 @@ function Navigation() {
   const toggleNavbar = () => setCollapse(!collapsed);
 
   return (
-    <Router>
-      <nav className="nav">
-        <div className="brand">Wave Suggester</div>
-
-        <NavToggle />
-      </nav>
-    </Router>
+    <div>
+      <Navbar color="info" light>
+        <Router>
+          <NavbarBrand href="/" className="mr-auto">
+            Wave Suggester
+          </NavbarBrand>
+          <NavLink href="/SignUp/">Sign UP</NavLink>
+        </Router>
+      </Navbar>
+    </div>
   );
 }
 
 export default Navigation;
+
