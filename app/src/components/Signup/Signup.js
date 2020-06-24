@@ -10,7 +10,7 @@ import {
   Button,
 } from "reactstrap";
 
-const Login = () => {
+const Signup = () => {
   // Form State
   const [formState, setFormState] = useState({
     email: "",
@@ -27,7 +27,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .get("http://localhost:3000/wave_suggester/auth/login", formState)
+      .post("http://localhost:3000/wave_suggester/auth/register", formState)
       .then((res) => console.log(res))
       .catch((err) => console.error(err));
     setFormState({
@@ -38,7 +38,7 @@ const Login = () => {
 
   return (
     <Container className="sign " style={{ width: "40rem" }}>
-      <h2>Log In</h2>
+      <h2>Sign Up</h2>
       <Form className="form" onSubmit={handleSubmit}>
         <Col>
           <FormGroup>
@@ -67,4 +67,4 @@ const Login = () => {
     </Container>
   );
 };
-export default Login;
+export default Signup;

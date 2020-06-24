@@ -3,6 +3,9 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 
+// React Router
+import { BrowserRouter as Router } from "react-router-dom";
+
 // State Management
 import { createStore } from "redux";
 import rootReducer from "./reducers";
@@ -13,7 +16,9 @@ const store = createStore(rootReducer, composeWithDevTools());
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <Router>
+        <App />
+      </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
