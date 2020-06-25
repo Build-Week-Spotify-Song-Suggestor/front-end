@@ -8,6 +8,10 @@
   align-items: center;
 }
 
+.suggestions {
+  display: flex;
+}
+
 /* .user-info {
   width: 25%;
   height: 100%;

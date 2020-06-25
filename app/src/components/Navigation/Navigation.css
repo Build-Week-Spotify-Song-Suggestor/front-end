@@ -4,3 +4,11 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.brand {
+  margin-left: 16px;
+}
+
+.nav-links {
+  margin-right: 16px;
+}

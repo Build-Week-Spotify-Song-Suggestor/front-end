@@ -8,8 +8,12 @@ import { Link } from "react-router-dom";
 function Navigation() {
   return (
     <nav className="nav">
-      <div className="brand">Wave Suggester</div>
-      <Link to="/register">Sign Up</Link>
+      <div className="brand">
+        <Link to="/">WaveS</Link>
+      </div>
+      <div className="nav-links">
+        <Link to="/register">Sign Up</Link>
+      </div>
     </nav>
   );
 }

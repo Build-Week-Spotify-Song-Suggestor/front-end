@@ -8,6 +8,8 @@ function Dashboard() {
       <section className="suggestions">
         Based on your selected genres suggestions will go here.
       </section>
+
+      <section>Listen to a few songs to fill this space.</section>
     </main>
   );
 }

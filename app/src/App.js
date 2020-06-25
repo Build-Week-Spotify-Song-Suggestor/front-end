@@ -21,6 +21,7 @@ function App({ name }) {
       <Switch>
         <Route exact path="/">
           <Login />
+          <Dashboard />
         </Route>
         <Route path="/register">
           <Signup />
