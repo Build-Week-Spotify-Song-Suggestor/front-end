@@ -6,10 +6,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .suggestions {
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 200px;
+  justify-content: center;
+}
+
+.suggestions > * {
+  flex: 1 1 400px;
 }
 
 /* .user-info {

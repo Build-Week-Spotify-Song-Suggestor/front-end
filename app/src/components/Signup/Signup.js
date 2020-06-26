@@ -7,7 +7,7 @@ const Login = () => {
   const [formState, setFormState] = useState({
     email: "",
     password: "",
-    isRemembered: false,
+    // isRemembered: false,
   });
 
   const [errors, setErrors] = useState({
