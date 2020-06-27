@@ -1,5 +1,5 @@
 const initialState = {
-  name: "Mark",
+  isLoggedIn: true,
 };
 
 export const user = (state = initialState, { type, payload }) => {

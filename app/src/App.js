@@ -13,15 +13,19 @@ import { connect } from "react-redux";
 // React Router
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Signup from "./components/Signup/Signup";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
-function App({ name }) {
+function App({ isLoggedin }) {
   return (
     <>
       <Navigation />
       <Switch>
         <Route exact path="/">
+          <PrivateRoute component={Dashboard} isLoggedin={isLoggedin} />
+        </Route>
+
+        <Route path="/login">
           <Login />
-          <Dashboard />
         </Route>
         <Route path="/register">
           <Signup />
@@ -33,7 +37,7 @@ function App({ name }) {
 
 const mapStateToProps = (state) => {
   return {
-    name: state.user.name,
+    isLoggedin: state.user.isLoggedin,
   };
 };
 
