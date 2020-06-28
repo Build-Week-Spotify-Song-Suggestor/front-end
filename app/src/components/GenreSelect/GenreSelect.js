@@ -4,14 +4,12 @@ import Card from "../Card/Card";
 // Data
 import genreData from "../../mockData/genre";
 
-function GenreSelect() {
-  const [selectedGenres, setSelectedGenres] = useState([
-    {
-      genre: "Hip Hop",
-      image: "hiphop",
-      id: 0,
-    },
-  ]);
+// Redux
+import { connect } from "react-redux";
+import { addGenres, loadUserDash } from "../../actions";
+
+function GenreSelect(props) {
+  const [selectedGenres, setSelectedGenres] = useState([]);
 
   const removeElementFromState = (info) => {
     let arr = [];
@@ -33,6 +31,12 @@ function GenreSelect() {
     }
   };
 
+  const handleSubmit = () => {
+    // Send to reducer:
+    props.addGenres(selectedGenres);
+    props.loadUserDash();
+  };
+
   return (
     <>
       <header>
@@ -43,7 +47,7 @@ function GenreSelect() {
           <div>
             {" "}
             You've selected 3, deselect your choices first if you'd like to
-            change them{" "}
+            change them
           </div>
         ) : null}
       </header>
@@ -58,8 +62,15 @@ function GenreSelect() {
           />
         ))}
       </section>
+      <button onClick={handleSubmit}>Submit</button>
     </>
   );
 }
 
-export default GenreSelect;
+const mapStateToProps = (state) => {
+  return {};
+};
+
+export default connect(mapStateToProps, { addGenres, loadUserDash })(
+  GenreSelect
+);

@@ -2,13 +2,20 @@ import React from "react";
 import "./Dashboard.css";
 import UserInfo from "../UserInfo/UserInfo";
 import GenreSelect from "../GenreSelect/GenreSelect";
+import { connect } from "react-redux";
 
-function Dashboard() {
+function Dashboard(props) {
   return (
     <main className="user-dashboard">
-      <GenreSelect />
+      {props.loadUserDash ? <div>Hi</div> : <GenreSelect />}
     </main>
   );
 }
 
-export default Dashboard;
+const mapStateToProps = (state) => {
+  return {
+    loadUserDash: state.user.loadUserDash,
+  };
+};
+
+export default connect(mapStateToProps, {})(Dashboard);
