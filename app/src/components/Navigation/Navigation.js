@@ -4,18 +4,29 @@ import "./Navigation.css";
 
 // React Router
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-function Navigation() {
+function Navigation(props) {
   return (
     <nav className="nav">
       <div className="brand">
         <Link to="/">WaveS</Link>
       </div>
       <div className="nav-links">
-        <Link to="/register">Sign Up</Link>
+        {props.isLoggedIn ? (
+          <a>Log Out</a>
+        ) : (
+          <Link to="/register">Sign Up</Link>
+        )}
       </div>
     </nav>
   );
 }
 
-export default Navigation;
+const mapStateToProps = (state) => {
+  return {
+    isLoggedIn: state.user.isLoggedIn,
+  };
+};
+
+export default connect(mapStateToProps)(Navigation);

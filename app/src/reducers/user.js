@@ -2,6 +2,10 @@ const initialState = {
   isLoggedIn: true,
   selectedGenres: [],
   loadUserDash: false,
+
+  userInfo: {
+    email: "email@email.com",
+  },
 };
 
 export const user = (state = initialState, { type, payload }) => {

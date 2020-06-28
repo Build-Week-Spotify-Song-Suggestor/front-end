@@ -18,8 +18,6 @@ function GenreSelect(props) {
   };
 
   const handleClick = (e, info) => {
-    let arr = [];
-
     if (selectedGenres.length < 3) {
       if (selectedGenres.some((element) => element.id === info.id)) {
         removeElementFromState(info);

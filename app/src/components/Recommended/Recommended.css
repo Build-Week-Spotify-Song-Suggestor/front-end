@@ -1,0 +1,28 @@
+.rec-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tracks {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 200px;
+}
+
+.track {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.track img {
+  height: inherit;
+  width: inherit;
+}
+
+.track h4 {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  padding: 25px 0;
+}
