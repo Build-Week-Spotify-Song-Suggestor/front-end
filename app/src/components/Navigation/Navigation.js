@@ -1,26 +1,41 @@
 import React, { useState } from "react";
-import { Navbar, NavLink, NavbarBrand } from "reactstrap";
+import { Button, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
+import { Link } from "react-router-dom";
+import SignUp from "../Login/signUp";
+import Login from "../Login/Login";
 
 // React Router
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+
+
 
 function Navigation() {
   const [collapsed, setCollapse] = useState(true);
   const toggleNavbar = () => setCollapse(!collapsed);
 
   return (
-    <div>
+    <>
+      
       <Navbar color="info" light>
-        <Router>
-          <NavbarBrand href="/" className="mr-auto">
-            Wave Suggester
-          </NavbarBrand>
-          <NavLink href="/SignUp/">Sign UP</NavLink>
-        </Router>
+        <NavbarBrand href="/" className="mr-auto">Wave Suggester</NavbarBrand>
+        <Link to= {'/signUp'}>
+        <Button>Sign Up</Button>
+        </Link>
+       
       </Navbar>
-    </div>
+     
+      
+     
+        
+
+      
+
+
+    
+ 
+    </>
+      
   );
-}
+};
 
 export default Navigation;
-

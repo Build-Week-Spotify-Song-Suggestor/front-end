@@ -9,11 +9,12 @@ import {
   Button,
 } from "reactstrap";
 
-const Login = () => {
+const SignUp = () => {
   // Form State
   const [formState, setFormState] = useState({
     email: "",
     password: "",
+    confirmPassword: ""
   });
 
   const handleChange = (e) => {
@@ -28,12 +29,13 @@ const Login = () => {
     setFormState({
       email: "",
       password: "",
+      confirmPassword: ""
     });
   };
 
   return (
     <Container className="sign " style={{ width: "40rem", marginTop:"10rem" }}>
-      <h2>Sign In</h2>
+      <h2>Sign Up</h2>
       <Form className="form" onSubmit={handleSubmit}>
         <Col>
           <FormGroup>
@@ -57,9 +59,22 @@ const Login = () => {
             />
           </FormGroup>
         </Col>
+        <Col>
+        <FormGroup>
+            <Label>Confirm Password</Label>
+            <Input
+              type="confirmPassword"
+              name="confirmPassword"
+              placeholder="********"
+              onChange={handleChange}
+            />
+          </FormGroup>
+        </Col>
         <Button style={{position: 'absolute', left: '50%'}}>Submit</Button>
       </Form>
     </Container>
   );
 };
-export default Login;
+
+
+export default SignUp;
